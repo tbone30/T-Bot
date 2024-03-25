@@ -1,1 +1,1 @@
-# discordbot
+# Tbone30's personal discrod bot, based on the tutorial at https://discordjs.guide/
