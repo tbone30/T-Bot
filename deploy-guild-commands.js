@@ -30,9 +30,37 @@ const rest = new REST().setToken(token);
 // and deploy your commands!
 (async () => {
 	try {
+		// Clear all existing commands
+        // Fetch all commands
+		/* nonfunctional code to clear all commands
+		let removeCommands1 = await rest.get(
+			Routes.applicationGuildCommands(clientId, guildId1)
+		);
+		
+		// Delete all commands
+		for (let command of removeCommands1) {
+			await rest.delete(
+				Routes.applicationGuildCommand(clientId, guildId1, command.id)
+			);
+		}
+
+		let removeCommands2 = await rest.get(
+			Routes.applicationGuildCommands(clientId, guildId2)
+		);
+		
+		// Delete all commands
+		for (let command of removeCommands2) {
+			await rest.delete(
+				Routes.applicationGuildCommand(clientId, guildId2, command.id)
+			);
+		} */
+
+        // console.log(`Cleared all existing application (/) commands.`);
+
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
+
 		const data1 = await rest.put(
 			Routes.applicationGuildCommands(clientId, guildId1),
 			{ body: commands },
